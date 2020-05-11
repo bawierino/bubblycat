@@ -1,2 +1,2 @@
-# bubbly_cat
+# Bubbly Cat
 UI components library based on the aurum framework. (www.aurumjs.org)
