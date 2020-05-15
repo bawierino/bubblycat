@@ -12,6 +12,10 @@
   "keywords": [],
   "author": "Xavier Hofmann",
   "license": "MIT",
+  "repository": {
+		"type": "git",
+		"url": "git+https://github.com/bawierino/bubbly_cat"
+	},
   "devDependencies": {
     "@types/jest": "^25.2.2",
     "css-loader": "^3.5.3",
