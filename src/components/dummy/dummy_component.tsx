@@ -16,7 +16,7 @@ export function Dummy(props: DummyProps) {
 
 	return (
 		<div class={dummyStyle()}>
-			<span>Just a random dummy component for testing </span>
+			<span>Just a random bubblycat dummy component for testing </span>
 			{renderLabel()}
 		</div>
 	);

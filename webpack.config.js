@@ -4,16 +4,15 @@ module.exports = {
 	mode: 'development',
 	devtool: 'inline-source-map',
 	entry: {
-		app: './src/main.tsx',
-		bubblycat: './src/bubblycat.ts'
+		app: './src/main.tsx'
 	},
-	watch: false,
+	watch: true,
 	module: {
 		rules: [
 			{
 				test: /\.tsx?$/,
 				use: 'ts-loader',
-				exclude: /node_modules|dist/
+				exclude: /node_modules|dist|prebuilt|prebuilt_minified/
 			},
 			{
 				test: /\.css$/,
@@ -21,7 +20,7 @@ module.exports = {
 			},
 			{
 				test: /\.s[ac]ss$/i,
-				exclude: /node_modules|dist/,
+				exclude: /node_modules|dist|prebuilt|prebuilt_minified/,
 				use: [
 					// Creates `style` nodes from JS strings
 					'style-loader',
