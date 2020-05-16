@@ -1,8 +1,10 @@
-import { Aurum } from 'aurumjs';
+import { Aurum, DataSource } from 'aurumjs';
 import { dummyStyle } from './dummy.style';
 
+export type LabelType = DataSource<string> | string;
+
 export interface DummyProps {
-	label?: string;
+	label?: LabelType;
 }
 
 export function Dummy(props: DummyProps) {

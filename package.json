@@ -2,15 +2,17 @@
 	"name": "bubblycat",
 	"version": "0.0.0",
 	"description": "",
-	"main": "dist/index.js",
-	"types": "dist/index.d.ts",
+	"source": "src/bubblycat.ts",
+	"main": "dist/bubblycat.js",
+	"types": "dist/bubblycat.d.ts",
 	"scripts": {
 		"build": "webpack",
 		"dev": "webpack-dev-server -w",
 		"test": "jest",
 		"host": "http-server -c-1 -o",
 		"format": "prettier --write \"src/**/*.ts\" \"src/**/*.tsx\"",
-		"lint": "tslint -p tsconfig.json"
+		"lint": "tslint -p tsconfig.json",
+		"deploy": "npm run build && microbundle"
 	},
 	"keywords": [],
 	"author": "Xavier Hofmann",
@@ -24,6 +26,7 @@
 		"css-loader": "^3.5.3",
 		"http-server": "^0.12.3",
 		"jest": "^26.0.1",
+		"microbundle": "^0.12.0",
 		"prettier": "^2.0.5",
 		"sass": "^1.26.5",
 		"sass-loader": "^8.0.2",

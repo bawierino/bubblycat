@@ -1,14 +1,19 @@
 {
-  "compilerOptions": {
-    "outDir": "dist",
-    "sourceMap": true,
-    "module": "esnext",
-    "target": "es2017",
-    "esModuleInterop": true,
-    "jsxFactory": "Aurum.factory",
-    "jsx": "react",
-    "moduleResolution": "node",
-    "declaration": true
-  },
-  "include": ["src/**/*.ts", "src/**/*.tsx"]
+	"compilerOptions": {
+		"alwaysStrict": true,
+		"outDir": "dist",
+		"sourceMap": true,
+		"module": "esnext",
+		"target": "es2017",
+		"esModuleInterop": true,
+		"watch": false,
+		"jsxFactory": "Aurum.factory",
+		"jsx": "react",
+		"moduleResolution": "node",
+		"experimentalDecorators": true,
+		"declaration": true,
+		"declarationMap": true,
+		"strictFunctionTypes": true
+	},
+	"include": ["src/**/*.ts", "src/**/*.tsx"]
 }
