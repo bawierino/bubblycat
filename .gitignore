@@ -3,3 +3,5 @@ dist
 .history
 coverage
 /.vscode/settings.json
+prebuilt
+prebuilt_minified

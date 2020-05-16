@@ -1,9 +1,9 @@
 {
 	"name": "bubblycat",
-	"version": "0.0.0",
+	"version": "0.0.1",
 	"description": "",
 	"source": "src/bubblycat.ts",
-	"main": "dist/bubblycat.js",
+	"main": "prebuilt/bubblycat.js",
 	"types": "dist/bubblycat.d.ts",
 	"scripts": {
 		"build": "webpack",
@@ -12,7 +12,7 @@
 		"host": "http-server -c-1 -o",
 		"format": "prettier --write \"src/**/*.ts\" \"src/**/*.tsx\"",
 		"lint": "tslint -p tsconfig.json",
-		"deploy": "npm run build && microbundle"
+		"deploy": "npm run build && microbundle && microbundle --no-compress --entry dist/bubblycat.js --output prebuilt --name bubblycat && microbundle --entry dist/bubblycat.js --output prebuilt_minified --name bubblycat"
 	},
 	"keywords": [],
 	"author": "Xavier Hofmann",
@@ -45,6 +45,7 @@
 		"emotion": "^10.0.27"
 	},
 	"files": [
-		"dist/**/*"
+		"prebuilt/**/*",
+		"prebuilt_minified/**/*"
 	]
 }
