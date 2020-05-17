@@ -1,10 +1,10 @@
 import { Aurum } from 'aurumjs';
 import './scss/example.scss';
-import { Dummy } from '../src/components/dummy/dummy_component';
+import { Example } from './example';
 
 Aurum.attach(
 	<div>
-		<b>Hello Bubbly Cat!</b> <br /> Eventually, we will have a gallery here <br /> <Dummy />{' '}
+		<b>Hello Bubbly Cat!</b> <br /> Eventually, we will have a gallery here <br /> <Example></Example>
 	</div>,
 	document.body
 );
