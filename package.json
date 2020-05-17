@@ -1,6 +1,6 @@
 {
 	"name": "bubblycat",
-	"version": "0.0.5",
+	"version": "0.0.6",
 	"description": "",
 	"source": "src/bubblycat.ts",
 	"main": "prebuilt/bubblycat",
