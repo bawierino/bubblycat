@@ -1,6 +1,6 @@
 import { Aurum } from 'aurumjs';
-import '../scss/example.scss';
-import { Dummy } from './components/dummy/dummy_component';
+import './scss/example.scss';
+import { Dummy } from '../src/components/dummy/dummy_component';
 
 Aurum.attach(
 	<div>
