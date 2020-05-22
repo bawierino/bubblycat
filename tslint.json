@@ -2,6 +2,7 @@
 	"extends": ["tslint:recommended", "tslint-config-prettier"],
 	"rules": {
 		"no-empty-interface": false,
-		"no-empty": [true, "allow-empty-functions"]
+		"no-empty": [true, "allow-empty-functions"],
+		"no-unused-imports": true
 	}
 }
