@@ -1,27 +1,25 @@
-import { AurumElement, Aurum, DataSource, ObjectDataSource } from 'aurumjs';
-import { Dummy } from '../components/primitives/dummy/dummy';
-import { BubblycatConfiguration, BubblycatTheme, ThemeKeys } from './bubblycat_configuration';
+import { Aurum, AurumElement, DataSource } from 'aurumjs';
+import { Dummy, DummyProps } from '../components/primitives/dummy/dummy';
+import { bubblycatClassName } from './bubblycat_class_name';
+import { BubblycatConfiguration, BubblycatTheme } from './bubblycat_configuration';
 import { BubblyComponent } from '../components/shared/shared_component_interfaces';
+import { BubblyComponentProps } from '../components/shared/shared_component_props';
 
 export class Bubblycat {
 	private readonly configuration: BubblycatConfiguration;
+	private sharedClassName: string;
 
 	constructor(configuration: BubblycatConfiguration) {
 		this.configuration = configuration;
+		this.sharedClassName = bubblycatClassName;
 	}
 
-	private wrapComponent(component: BubblyComponent): () => AurumElement {
-		return () => component({ sharedProps: { theme: this.getCurrentTheme() } });
+	private wrapComponent<C extends BubblyComponent<P>, P>(component: C): (props: P) => AurumElement {
+		return (props) => component({ sharedProps: { theme: this.getCurrentTheme(), className: this.sharedClassName }, ...(props ?? ({} as P)) });
 	}
 
-	get WrappedDummy(): () => AurumElement {
-		// get WrappedDummy(): () => typeof Dummy {
-		// return this.wrapComponent(Dummy) as () => typeof Dummy;
-		return this.wrapComponent(Dummy);
-	}
-
-	get Dummy(): () => AurumElement {
-		return () => <Dummy sharedProps={{ theme: this.getCurrentTheme() }}></Dummy>;
+	get Dummy(): (props?: DummyProps) => AurumElement {
+		return this.wrapComponent<typeof Dummy, DummyProps>(Dummy);
 	}
 
 	public updateTheme(theme: Partial<BubblycatTheme>): void {

@@ -15,8 +15,7 @@ export const Example: AurumFC = () => {
 			>
 				make blue
 			</button>
-			<bc.Dummy />
-			<bc.WrappedDummy />
+			<bc.Dummy prefix={new DataSource('hello')} />
 		</div>
 	);
 };

@@ -1,8 +1,12 @@
-import { AurumElement, Aurum, DataSource } from 'aurumjs';
-import { SharedComponentProps } from '../../shared/shared_component_props';
+import { Aurum, AurumElement, DataSource } from 'aurumjs';
 import { css } from 'emotion';
+import { BubblyComponentPropsInternal } from '../../shared/shared_component_props';
 
-export function Dummy(props: { sharedProps: SharedComponentProps; prefix?: DataSource<string> }, children: AurumElement[]): AurumElement {
+export interface DummyProps {
+	prefix: DataSource<string>;
+}
+
+export function Dummy(props: BubblyComponentPropsInternal<DummyProps>): AurumElement {
 	const { prefix } = props;
 	return (
 		<div
@@ -10,7 +14,9 @@ export function Dummy(props: { sharedProps: SharedComponentProps; prefix?: DataS
 				(color) =>
 					css`
 						color: ${color};
-					`
+					` +
+					' ' +
+					props.sharedProps.className
 			)}
 		>
 			{prefix}
