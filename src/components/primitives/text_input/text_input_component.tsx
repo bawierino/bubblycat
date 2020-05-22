@@ -1,6 +1,6 @@
 import { Aurum, AurumElement, DataSource } from 'aurumjs';
 import { AurumData } from '../../../utils/types/data_types';
-import { AurumFC } from '../../../utils/types/function_types';
+import { BubblycatComponentPropsInternal } from '../../generic/bubblycat_component';
 import { textInputStyle } from './text_input.style';
 
 export interface TextInputProps {
@@ -9,7 +9,7 @@ export interface TextInputProps {
 	placeholder?: AurumData<string>;
 }
 
-export const TextInputComponent: AurumFC<TextInputProps> = (props): AurumElement => {
+export function TextInputComponentTextInputComponent(props: BubblycatComponentPropsInternal<TextInputProps>): AurumElement {
 	const { label, value, placeholder } = props;
 	const focussed = new DataSource<boolean>(false);
 	// const inputRef = React.useRef(undefined as HTMLInputElement);
@@ -42,4 +42,4 @@ export const TextInputComponent: AurumFC<TextInputProps> = (props): AurumElement
 			)}
 		</div>
 	);
-};
+}

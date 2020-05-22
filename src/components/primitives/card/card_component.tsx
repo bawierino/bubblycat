@@ -1,12 +1,12 @@
-import { Aurum } from 'aurumjs';
-import { AurumFC } from '../../../utils/types/function_types';
+import { Aurum, AurumElement } from 'aurumjs';
+import { BubblycatComponentPropsInternal } from '../../generic/bubblycat_component';
 import { cardStyle } from './card.style';
 
 export interface CardProps {}
 
-export const CardComponent: AurumFC<CardProps> = (props, children) => {
+export function CardComponent(props: BubblycatComponentPropsInternal<CardProps>, children: AurumElement[]): AurumElement {
 	// TODO: touch handling
 	const hasTouchClassName = '';
 
 	return <div class={`${cardStyle} ${hasTouchClassName}`}>{children}</div>;
-};
+}

@@ -1,8 +1,7 @@
-import { Aurum, DataSource } from 'aurumjs';
+import { Aurum, AurumElement, DataSource } from 'aurumjs';
 import { Bubblycat } from '../src/bubblycat/bubblycat';
-import { AurumFC } from '../src/utils/types/function_types';
 
-export const Example: AurumFC = () => {
+export function Example(): AurumElement {
 	const bc = new Bubblycat({ theme: { primaryMain: new DataSource('#00cc00') } });
 
 	return (
@@ -18,4 +17,4 @@ export const Example: AurumFC = () => {
 			<bc.Dummy prefix={new DataSource('hello')} />
 		</div>
 	);
-};
+}

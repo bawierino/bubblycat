@@ -1,6 +1,6 @@
 import { Aurum, AurumElement } from 'aurumjs';
 import { animationDurationsRawMs } from '../../../design system/constants/animations';
-import { AurumFC } from '../../../utils/types/function_types';
+import { BubblycatComponentPropsInternal } from '../../generic/bubblycat_component';
 import { buttonStyle } from './button.style';
 
 export interface ButtonProps {
@@ -16,7 +16,7 @@ export enum ButtonIconPlacement {
 	RIGHT = 'RIGHT'
 }
 
-export const ButtonComponent: AurumFC<ButtonProps> = (props) => {
+export function ButtonComponent(props: BubblycatComponentPropsInternal<ButtonProps>): AurumElement {
 	const { id, label = '', icon = '', onCLick = () => {}, iconPlacement = ButtonIconPlacement.LEFT } = props;
 	// TODO: touch handling
 	const hasTouchClassName = '';
@@ -43,4 +43,4 @@ export const ButtonComponent: AurumFC<ButtonProps> = (props) => {
 			{iconPlacement === ButtonIconPlacement.RIGHT ? renderIcon() : <div> </div>}
 		</div>
 	);
-};
+}

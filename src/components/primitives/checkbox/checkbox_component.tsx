@@ -1,12 +1,11 @@
-import { Aurum, DataSource } from 'aurumjs';
-import { AurumFC } from '../../../utils/types/function_types';
+import { Aurum, AurumElement, DataSource } from 'aurumjs';
+import { BubblycatComponentPropsInternal } from '../../generic/bubblycat_component';
 
 export interface CheckboxProps {
 	checked: DataSource<boolean>;
 	label?: string;
 }
-
-export const Checkbox: AurumFC<CheckboxProps> = (props) => {
+export function Checkbox(props: BubblycatComponentPropsInternal<CheckboxProps>): AurumElement {
 	const { checked, label } = props;
 
 	return (
@@ -19,4 +18,4 @@ export const Checkbox: AurumFC<CheckboxProps> = (props) => {
 			{label && <label>{label}</label>}
 		</div>
 	);
-};
+}

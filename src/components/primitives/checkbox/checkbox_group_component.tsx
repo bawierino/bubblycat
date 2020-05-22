@@ -1,5 +1,5 @@
 import { ArrayDataSource, Aurum, AurumElement } from 'aurumjs';
-import { AurumFC } from '../../../utils/types/function_types';
+import { BubblycatComponentPropsInternal } from '../../generic/bubblycat_component';
 import { Checkbox, CheckboxProps } from './checkbox_component';
 
 export interface CheckboxGroupProps {
@@ -7,7 +7,7 @@ export interface CheckboxGroupProps {
 	label?: string;
 }
 
-export const CheckboxGroup: AurumFC<CheckboxGroupProps> = (props) => {
+export function CheckboxGroup(props: BubblycatComponentPropsInternal<CheckboxGroupProps>): AurumElement {
 	const { items, label } = props;
 	const groupClass = '';
 
@@ -16,7 +16,7 @@ export const CheckboxGroup: AurumFC<CheckboxGroupProps> = (props) => {
 	};
 
 	const renderItem = (item: CheckboxProps): AurumElement => {
-		return <Checkbox {...item} />;
+		return <Checkbox {...item} sharedProps={props.sharedProps} />;
 	};
 
 	return (
@@ -25,4 +25,4 @@ export const CheckboxGroup: AurumFC<CheckboxGroupProps> = (props) => {
 			{items.map(renderItem)}
 		</div>
 	);
-};
+}

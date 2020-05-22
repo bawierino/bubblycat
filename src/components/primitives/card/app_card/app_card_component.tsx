@@ -1,5 +1,5 @@
-import { Aurum } from 'aurumjs';
-import { AurumFC } from '../../../../utils/types/function_types';
+import { Aurum, AurumElement } from 'aurumjs';
+import { BubblycatComponentPropsInternal } from '../../../generic/bubblycat_component';
 import { ButtonComponent, ButtonProps } from '../../button/button_component';
 import { CardComponent } from '../card_component';
 import { appCardStyle } from './app_card.style';
@@ -11,20 +11,20 @@ export interface AppCardProps {
 	titleBackground: string;
 }
 
-export const AppCardComponent: AurumFC<AppCardProps> = (props) => {
+export function AppCardComponent(props: BubblycatComponentPropsInternal<AppCardProps>): AurumElement {
 	const { button, title, description, titleBackground } = props;
 
 	return (
-		<CardComponent>
+		<CardComponent sharedProps={props.sharedProps}>
 			<div class={appCardStyle}>
 				<div class="title" style={`background: ${titleBackground}`}>
 					{title}
 				</div>
 				<div class="description">{description}</div>
 				<div class="button">
-					<ButtonComponent {...button} />
+					<ButtonComponent {...button} sharedProps={props.sharedProps} />
 				</div>
 			</div>
 		</CardComponent>
 	);
-};
+}
