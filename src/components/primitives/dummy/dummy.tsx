@@ -8,6 +8,7 @@ export interface DummyProps {
 
 export function Dummy(props: BubblycatComponentPropsInternal<DummyProps>): AurumElement {
 	const { prefix } = props;
+	props.sharedProps.isTouchingDevice.listen((ht) => console.log(ht));
 	return (
 		<div
 			class={props.sharedProps.theme.primaryMain.map(

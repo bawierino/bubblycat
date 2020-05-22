@@ -8,5 +8,5 @@ export type BubblycatComponentPropsInternal<P extends {}> = P & { sharedProps: S
 export interface SharedComponentProps {
 	theme: BubblycatConfiguration['theme'];
 	className: string;
-	hasTouch: DataSource<boolean>;
+	isTouchingDevice: DataSource<boolean>;
 }
