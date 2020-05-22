@@ -26,6 +26,7 @@ export class Bubblycat {
 
 		this.cancellationToken.addCancelable(() => {
 			window.removeEventListener('touchstart', this.handleTouchStart.bind(this));
+			window.removeEventListener('touchend', this.handleTouchEnd.bind(this));
 		});
 	}
 
