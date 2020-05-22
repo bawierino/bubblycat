@@ -1,4 +1,4 @@
-import { Aurum, ObjectDataSource, DataSource } from 'aurumjs';
+import { Aurum, DataSource } from 'aurumjs';
 import { Bubblycat } from '../src/instance/bubblycat';
 import { AurumFC } from '../src/utils/types/function_types';
 

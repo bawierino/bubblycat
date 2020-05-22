@@ -13,7 +13,8 @@
 		"experimentalDecorators": true,
 		"declaration": true,
 		"declarationMap": true,
-		"strictFunctionTypes": true
+		"strictFunctionTypes": true,
+		"noUnusedLocals": true
 	},
 	"include": ["src/**/*.ts", "src/**/*.tsx", "example/**/*.ts", "example/**/*.tsx"]
 }

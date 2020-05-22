@@ -1,9 +1,8 @@
-import { Aurum, AurumElement, DataSource } from 'aurumjs';
+import { AurumElement } from 'aurumjs';
 import { Dummy, DummyProps } from '../components/primitives/dummy/dummy';
+import { BubblyComponent } from '../components/shared/shared_component_interfaces';
 import { bubblycatClassName } from './bubblycat_class_name';
 import { BubblycatConfiguration, BubblycatTheme } from './bubblycat_configuration';
-import { BubblyComponent } from '../components/shared/shared_component_interfaces';
-import { BubblyComponentProps } from '../components/shared/shared_component_props';
 
 export class Bubblycat {
 	private readonly configuration: BubblycatConfiguration;
