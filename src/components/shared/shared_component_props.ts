@@ -1,4 +1,4 @@
-import { BubblycatConfiguration } from '../../instance/bubblycat_configuration';
+import { BubblycatConfiguration } from '../../bubblycat/bubblycat_configuration';
 
 export interface SharedComponentProps {
 	theme: BubblycatConfiguration['theme'];

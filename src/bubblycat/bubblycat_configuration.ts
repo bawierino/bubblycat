@@ -7,5 +7,3 @@ export interface BubblycatConfiguration {
 export interface BubblycatTheme {
 	primaryMain: string;
 }
-
-export type ThemeKeys = keyof BubblycatTheme;

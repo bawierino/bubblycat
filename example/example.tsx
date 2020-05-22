@@ -1,5 +1,5 @@
 import { Aurum, DataSource } from 'aurumjs';
-import { Bubblycat } from '../src/instance/bubblycat';
+import { Bubblycat } from '../src/bubblycat/bubblycat';
 import { AurumFC } from '../src/utils/types/function_types';
 
 export const Example: AurumFC = () => {

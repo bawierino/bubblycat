@@ -2,7 +2,7 @@
 	"name": "bubblycat",
 	"version": "0.0.6",
 	"description": "",
-	"source": "src/bubblycat.ts",
+	"source": "src/barrel.ts",
 	"main": "prebuilt/bubblycat",
 	"types": "prebuilt/bubblycat.d.ts",
 	"scripts": {
@@ -12,7 +12,7 @@
 		"host": "http-server -c-1 -o",
 		"format": "prettier --write \"src/**/*.ts\" \"src/**/*.tsx\"",
 		"lint": "tslint -p tsconfig.json",
-		"deploy": "tsc && microbundle --no-compress --output prebuilt --name bubblycat && microbundle --entry dist/bubblycat.js --output prebuilt_minified --name bubblycat"
+		"deploy": "tsc && microbundle --no-compress --output prebuilt --name bubblycat && microbundle --entry dist/barrel.js --output prebuilt_minified --name bubblycat"
 	},
 	"keywords": [],
 	"author": "Xavier Hofmann",

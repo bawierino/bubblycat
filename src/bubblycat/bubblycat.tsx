@@ -13,14 +13,6 @@ export class Bubblycat {
 		this.sharedClassName = bubblycatClassName;
 	}
 
-	private wrapComponent<C extends BubblyComponent<P>, P>(component: C): (props: P) => AurumElement {
-		return (props) => component({ sharedProps: { theme: this.getCurrentTheme(), className: this.sharedClassName }, ...(props ?? ({} as P)) });
-	}
-
-	get Dummy(): (props?: DummyProps) => AurumElement {
-		return this.wrapComponent<typeof Dummy, DummyProps>(Dummy);
-	}
-
 	public updateTheme(theme: Partial<BubblycatTheme>): void {
 		for (const themePartKey of Object.keys(theme)) {
 			this.configuration.theme[themePartKey as keyof BubblycatTheme].update(theme[themePartKey]);
@@ -29,5 +21,15 @@ export class Bubblycat {
 
 	private getCurrentTheme(): BubblycatConfiguration['theme'] {
 		return this.configuration.theme;
+	}
+
+	// COMPONENT EXPOSING
+
+	get Dummy(): (props?: DummyProps) => AurumElement {
+		return this.wrapComponent<typeof Dummy, DummyProps>(Dummy);
+	}
+
+	private wrapComponent<C extends BubblyComponent<P>, P>(component: C): (props: P) => AurumElement {
+		return (props) => component({ sharedProps: { theme: this.getCurrentTheme(), className: this.sharedClassName }, ...(props ?? ({} as P)) });
 	}
 }
