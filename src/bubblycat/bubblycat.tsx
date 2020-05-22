@@ -1,7 +1,7 @@
 import { AurumElement } from 'aurumjs';
 import { Dummy, DummyProps } from '../components/primitives/dummy/dummy';
-import { BubblyComponent } from '../components/shared/shared_component_interfaces';
-import { bubblycatClassName } from './bubblycat_class_name';
+import { BubblycatComponent } from '../components/generic/bubblycat_component';
+import { pseudoGlobalClassName } from './pseudo_global_class_name';
 import { BubblycatConfiguration, BubblycatTheme } from './bubblycat_configuration';
 
 export class Bubblycat {
@@ -10,7 +10,7 @@ export class Bubblycat {
 
 	constructor(configuration: BubblycatConfiguration) {
 		this.configuration = configuration;
-		this.sharedClassName = bubblycatClassName;
+		this.sharedClassName = pseudoGlobalClassName;
 	}
 
 	public updateTheme(theme: Partial<BubblycatTheme>): void {
@@ -29,7 +29,7 @@ export class Bubblycat {
 		return this.wrapComponent<typeof Dummy, DummyProps>(Dummy);
 	}
 
-	private wrapComponent<C extends BubblyComponent<P>, P>(component: C): (props: P) => AurumElement {
+	private wrapComponent<C extends BubblycatComponent<P>, P>(component: C): (props: P) => AurumElement {
 		return (props) => component({ sharedProps: { theme: this.getCurrentTheme(), className: this.sharedClassName }, ...(props ?? ({} as P)) });
 	}
 }

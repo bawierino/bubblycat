@@ -1,6 +1,6 @@
 import { css } from 'emotion';
 
-export const bubblycatClassName = css`
+export const pseudoGlobalClassName = css`
 	label: bubbly-cat-component;
 
 	font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',

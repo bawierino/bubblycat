@@ -1,12 +1,12 @@
 import { Aurum, AurumElement, DataSource } from 'aurumjs';
 import { css } from 'emotion';
-import { BubblyComponentPropsInternal } from '../../shared/shared_component_props';
+import { BubblycatComponentPropsInternal } from '../../generic/bubblycat_component';
 
 export interface DummyProps {
 	prefix: DataSource<string>;
 }
 
-export function Dummy(props: BubblyComponentPropsInternal<DummyProps>): AurumElement {
+export function Dummy(props: BubblycatComponentPropsInternal<DummyProps>): AurumElement {
 	const { prefix } = props;
 	return (
 		<div
