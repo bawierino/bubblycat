@@ -4,7 +4,7 @@ import { cardStyle } from './card.style';
 
 export interface CardProps {}
 
-export function CardComponent(props: BubblycatComponentPropsInternal<CardProps>, children: AurumElement[]): AurumElement {
+export function CardComponent(props: BubblycatComponentPropsInternal<CardProps>, children: ChildNode[]): AurumElement {
 	// TODO: touch handling
 	const hasTouchClassName = '';
 
