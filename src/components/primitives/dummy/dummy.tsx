@@ -1,6 +1,7 @@
 import { Aurum, AurumElement, DataSource } from 'aurumjs';
 import { css } from 'emotion';
 import { BubblycatComponentPropsInternal } from '../../generic/bubblycat_component';
+import { Icon, IconClass } from '../../../design system/icons/icons';
 
 export interface DummyProps {
 	prefix: DataSource<string>;
@@ -22,6 +23,7 @@ export function Dummy(props: BubblycatComponentPropsInternal<DummyProps>): Aurum
 		>
 			{prefix}
 			你好我的朋友
+			<Icon iconClass={IconClass.CROSS}></Icon>
 		</div>
 	);
 }

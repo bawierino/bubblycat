@@ -22,8 +22,12 @@
 		"url": "git+https://github.com/bawierino/bubbly_cat"
 	},
 	"devDependencies": {
+		"@fortawesome/fontawesome-svg-core": "^1.2.28",
+		"@fortawesome/free-regular-svg-icons": "^5.13.0",
+		"@fortawesome/free-solid-svg-icons": "^5.13.0",
 		"@types/jest": "^25.2.2",
 		"css-loader": "^3.5.3",
+		"file-loader": "^6.0.0",
 		"http-server": "^0.12.3",
 		"jest": "^26.0.1",
 		"microbundle": "^0.12.0",

@@ -1,8 +1,8 @@
-import { AurumElement, DataSource, CancellationToken } from 'aurumjs';
-import { Dummy, DummyProps } from '../components/primitives/dummy/dummy';
+import { AurumElement, CancellationToken, DataSource } from 'aurumjs';
 import { BubblycatComponent } from '../components/generic/bubblycat_component';
-import { pseudoGlobalClassName } from './pseudo_global_class_name';
+import { Dummy, DummyProps } from '../components/primitives/dummy/dummy';
 import { BubblycatConfiguration, BubblycatTheme } from './bubblycat_configuration';
+import { pseudoGlobalClassName } from './pseudo_global_class_name';
 
 export class Bubblycat {
 	private readonly configuration: BubblycatConfiguration;
