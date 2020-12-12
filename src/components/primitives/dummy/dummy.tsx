@@ -1,4 +1,4 @@
-import { Aurum, AurumElement, DataSource } from 'aurumjs';
+import { Aurum, AurumElement, DataSource, dsMap } from 'aurumjs';
 import { css } from 'emotion';
 import { BubblycatComponentPropsInternal } from '../../generic/bubblycat_component';
 import { Icon, IconClass } from '../../../design system/icons/icons';
@@ -12,13 +12,15 @@ export function Dummy(props: BubblycatComponentPropsInternal<DummyProps>): Aurum
 	props.sharedProps.isTouchingDevice.listen((ht) => console.log(ht));
 	return (
 		<div
-			class={props.sharedProps.theme.primaryMain.map(
-				(color) =>
-					css`
-						color: ${color};
-					` +
-					' ' +
-					props.sharedProps.className
+			class={props.sharedProps.theme.primaryMain.transform<string>(
+				dsMap(
+					(color) =>
+						css`
+							color: ${color};
+						` +
+						' ' +
+						props.sharedProps.className
+				)
 			)}
 		>
 			{prefix}

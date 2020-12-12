@@ -1,7 +1,6 @@
 import { config, dom, library } from '@fortawesome/fontawesome-svg-core';
 import { faTimes, faPlus, faCheck, faTrash } from '@fortawesome/free-solid-svg-icons';
-import { Aurum, AurumElement } from 'aurumjs';
-import { AttributeValue } from 'aurumjs/dist/utilities/common';
+import { Aurum, AurumElement, AttributeValue } from 'aurumjs';
 import { AurumData } from '../../utils/types/data_types';
 
 config.autoReplaceSvg = true;
